@@ -97,10 +97,17 @@ export default function AnimatedHero() {
               transition={{ delay: 0.5, duration: 0.6 }}
             >
               <div className="flex justify-between items-start mb-4">
-                <div className="w-10 h-10 bg-[#22c55e] rounded-xl flex items-center justify-center">
-                  <Users className="w-5 h-5 text-white" />
+                <div className="w-12 h-12 bg-[#22c55e]/10 rounded-xl flex items-center justify-center border border-[#22c55e]/20 overflow-hidden relative">
+                  {/* Micro-UI: Invoice/Receipt */}
+                  <div className="w-6 h-8 bg-white shadow-sm rounded-sm flex flex-col p-1.5 gap-1 translate-y-1">
+                    <div className="w-full h-1 bg-gray-200 rounded-full"></div>
+                    <div className="w-3/4 h-1 bg-gray-200 rounded-full"></div>
+                    <div className="mt-auto w-full flex justify-between items-center">
+                      <div className="w-2 h-2 bg-[#22c55e] rounded-full"></div>
+                      <div className="w-3 h-1 bg-gray-300 rounded-full"></div>
+                    </div>
+                  </div>
                 </div>
-                <span className="text-3xl font-extrabold text-[#22c55e]">01.</span>
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2 leading-tight">Advanced Billing Software and <br/> Tax Compliance</h3>
               <p className="text-xs text-gray-500 mb-5">Automate complex invoicing workflows, eliminate manual reconciliation, and drive revenue growth effortlessly.</p>
@@ -122,10 +129,14 @@ export default function AnimatedHero() {
               transition={{ delay: 0.7, duration: 0.6 }} 
             >
               <div className="flex justify-between items-start mb-4">
-                <div className="w-10 h-10 bg-[#ff6b00] rounded-xl flex items-center justify-center">
-                  <MonitorSmartphone className="w-5 h-5 text-white" />
+                <div className="w-12 h-12 bg-[#ff6b00]/10 rounded-xl flex items-center justify-center border border-[#ff6b00]/20 overflow-hidden relative">
+                  {/* Micro-UI: Bar Chart / Sync */}
+                  <div className="flex items-end gap-1 w-6 h-6">
+                    <div className="w-1.5 h-3 bg-[#ff6b00]/40 rounded-t-sm"></div>
+                    <div className="w-1.5 h-4 bg-[#ff6b00]/60 rounded-t-sm"></div>
+                    <div className="w-1.5 h-6 bg-[#ff6b00] rounded-t-sm"></div>
+                  </div>
                 </div>
-                <span className="text-3xl font-extrabold text-[#ff6b00]">02.</span>
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2 leading-tight">Multi-Branch Inventory Sync & <br/> Real-Time Analytics</h3>
               <p className="text-xs text-gray-500 mb-5">Centralize operations to prevent stockouts and gain absolute visibility over unlimited physical locations.</p>

@@ -79,46 +79,81 @@ export default function HrmsIntro() {
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             <motion.div 
-              className="bg-white rounded-[2rem] p-8 shadow-xl shadow-black/5 border border-gray-100 flex flex-col items-center text-center"
+              className="bg-white rounded-[2rem] p-8 shadow-xl shadow-black/5 border border-gray-100 flex flex-col items-start text-left relative overflow-hidden"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <div className="w-16 h-16 bg-primary rounded-xl flex items-center justify-center mb-6">
-                <Users className="w-8 h-8 text-primary-foreground" />
+              <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-bl-[100px] -z-10" />
+              <div className="w-full flex justify-between items-start mb-6">
+                <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center border border-primary/20">
+                  {/* Micro-UI: Dashboard / POS */}
+                  <div className="w-6 h-6 border-2 border-primary rounded-md grid grid-cols-2 gap-0.5 p-0.5">
+                    <div className="bg-primary/50 rounded-sm"></div>
+                    <div className="bg-primary/50 rounded-sm"></div>
+                    <div className="bg-primary rounded-sm col-span-2"></div>
+                  </div>
+                </div>
+                <span className="text-[10px] font-bold text-primary tracking-widest uppercase bg-primary/10 px-2 py-1 rounded-full">Architecture</span>
               </div>
-              <p className="text-gray-500 text-sm leading-relaxed px-2">
+              <h4 className="text-xl font-extrabold text-gray-900 mb-2">POS Systems</h4>
+              <p className="text-gray-500 text-sm leading-relaxed">
                 We deploy robust POS architectures capable of seamlessly managing unlimited retail and restaurant locations.
               </p>
             </motion.div>
             
             <motion.div 
-              className="bg-white rounded-[2rem] p-8 shadow-xl shadow-black/5 border border-gray-100 flex flex-col items-center text-center"
+              className="bg-white rounded-[2rem] p-8 shadow-xl shadow-black/5 border border-gray-100 flex flex-col items-start text-left relative overflow-hidden"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <div className="w-16 h-16 bg-primary rounded-xl flex items-center justify-center mb-6">
-                <TrendingUp className="w-8 h-8 text-primary-foreground" />
+              <div className="absolute top-0 right-0 w-24 h-24 bg-[#ff6b00]/5 rounded-bl-[100px] -z-10" />
+              <div className="w-full flex justify-between items-start mb-6">
+                <div className="w-12 h-12 bg-[#ff6b00]/10 rounded-2xl flex items-center justify-center border border-[#ff6b00]/20">
+                  {/* Micro-UI: Inventory Tracking Line */}
+                  <div className="relative w-6 h-6">
+                    <div className="absolute bottom-1 left-0 w-1.5 h-1.5 bg-[#ff6b00] rounded-full"></div>
+                    <div className="absolute bottom-3 left-2 w-1.5 h-1.5 bg-[#ff6b00] rounded-full"></div>
+                    <div className="absolute top-1 right-0 w-2 h-2 bg-[#ff6b00] rounded-full ring-2 ring-[#ff6b00]/30"></div>
+                    <svg className="absolute inset-0 w-full h-full" viewBox="0 0 24 24">
+                      <path d="M3 18L10 12L15 15L21 6" fill="none" stroke="#ff6b00" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                </div>
+                <span className="text-[10px] font-bold text-[#ff6b00] tracking-widest uppercase bg-[#ff6b00]/10 px-2 py-1 rounded-full">Logistics</span>
               </div>
-              <p className="text-gray-500 text-sm leading-relaxed px-2">
+              <h4 className="text-xl font-extrabold text-gray-900 mb-2">Smart Inventory</h4>
+              <p className="text-gray-500 text-sm leading-relaxed">
                 Our dynamic inventory systems automatically trigger procurement and completely prevent costly stockouts.
               </p>
             </motion.div>
 
             <motion.div 
-              className="bg-white rounded-[2rem] p-8 shadow-xl shadow-black/5 border border-gray-100 flex flex-col items-center text-center"
+              className="bg-white rounded-[2rem] p-8 shadow-xl shadow-black/5 border border-gray-100 flex flex-col items-start text-left relative overflow-hidden"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: 0.5 }}
             >
-              <div className="w-16 h-16 bg-primary rounded-xl flex items-center justify-center mb-6">
-                <Layers className="w-8 h-8 text-primary-foreground" />
+              <div className="absolute top-0 right-0 w-24 h-24 bg-[#22c55e]/5 rounded-bl-[100px] -z-10" />
+              <div className="w-full flex justify-between items-start mb-6">
+                <div className="w-12 h-12 bg-[#22c55e]/10 rounded-2xl flex items-center justify-center border border-[#22c55e]/20">
+                  {/* Micro-UI: Integration Nodes */}
+                  <div className="relative w-6 h-6 flex items-center justify-center">
+                    <div className="absolute top-0 left-1 w-2 h-2 bg-[#22c55e] rounded-full"></div>
+                    <div className="absolute bottom-0 left-0 w-2 h-2 bg-[#22c55e] rounded-full"></div>
+                    <div className="absolute top-2 right-0 w-2.5 h-2.5 bg-[#22c55e] rounded-sm rotate-45"></div>
+                    <div className="absolute top-1.5 left-2.5 w-3 h-0.5 bg-[#22c55e]/50 rotate-45"></div>
+                    <div className="absolute bottom-1.5 left-1.5 w-3 h-0.5 bg-[#22c55e]/50 -rotate-45"></div>
+                  </div>
+                </div>
+                <span className="text-[10px] font-bold text-[#22c55e] tracking-widest uppercase bg-[#22c55e]/10 px-2 py-1 rounded-full">Integration</span>
               </div>
-              <p className="text-gray-500 text-sm leading-relaxed px-2">
+              <h4 className="text-xl font-extrabold text-gray-900 mb-2">Unified Operations</h4>
+              <p className="text-gray-500 text-sm leading-relaxed">
                 We unify all core operations including B2B e-commerce, complex tax billing, logistics, and analytics.
               </p>
             </motion.div>
