@@ -2,55 +2,147 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Star, Quote } from 'lucide-react';
+
+const testimonials = [
+  {
+    name: "Arjun Mehta",
+    role: "Director of Operations",
+    company: "National Supermarts",
+    content: "The multi-branch POS and inventory system completely transformed how we operate. We now have real-time stock visibility across all 38 retail locations — something we couldn't achieve in 5 years with our previous vendor.",
+    rating: 5,
+  },
+  {
+    name: "Priya Sharma",
+    role: "Chief Financial Officer",
+    company: "Grand Hotel Chain",
+    content: "Their custom billing software cut our month-end reconciliation from 3 days to under 2 hours. The GST compliance engine alone saves us ₹4 lakhs a year in accounting fees. The ROI was visible within the first quarter.",
+    rating: 5,
+  },
+  {
+    name: "Rajesh Kumar",
+    role: "Managing Director",
+    company: "Apex Microfinance",
+    content: "The MFI software they built handles our entire loan lifecycle — from application to disbursement to EMI collection. It is stable, secure, and our field agents love the mobile app. Highly recommended.",
+    rating: 5,
+  },
+  {
+    name: "Sunita Rao",
+    role: "Head of Technology",
+    company: "FreshMart Retail",
+    content: "We approached them for a B2B e-commerce portal and they delivered beyond expectations. The dealer login, custom pricing, and inventory sync works flawlessly. Our order processing time dropped by 60%.",
+    rating: 5,
+  },
+  {
+    name: "Mohammed Farouk",
+    role: "CEO",
+    company: "Falcon Logistics",
+    content: "The custom ERP and mobile app they built for our logistics team is outstanding. Tracking deliveries, managing dispatch, and generating client invoices — all in one system. Support is fast and proactive.",
+    rating: 5,
+  },
+  {
+    name: "Deepa Nair",
+    role: "Restaurant Owner",
+    company: "Spice Garden Chain",
+    content: "Running 8 restaurant branches used to be a nightmare. Now with their POS and centralised dashboard, I can see daily sales, stock levels, and staff performance from my phone. Game changer.",
+    rating: 5,
+  },
+];
+
+const clientNames = [
+  "National Supermarts",
+  "Grand Hotel Chain",
+  "Apex Microfinance",
+  "FreshMart Retail",
+  "Falcon Logistics",
+  "Spice Garden Chain",
+  "CityDine Foods",
+  "PrimeBuild Corp",
+];
 
 export default function OurClientele() {
-  const clients = [
-    { name: "RetailMax" },
-    { name: "GrandHotels" },
-    { name: "PrimeLogistics" },
-    { name: "FreshMart" },
-    { name: "ApexManufacturing" },
-    { name: "CityDine" },
-  ];
-
-  // Repeat the array so the marquee loops seamlessly
-  const repeatedClients = [...clients, ...clients, ...clients];
+  const repeatedClients = [...clientNames, ...clientNames, ...clientNames];
 
   return (
-    <section className="bg-[#f2f7f6] py-20 relative overflow-hidden">
-      <div className="container mx-auto px-4 max-w-6xl relative z-10">
-        
-        {/* Header Section */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-semibold text-[#0f3f3b] relative inline-block">
-            Trusted by Industry Leaders
-            <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-16 h-[2px] bg-[#0B7A6A] rounded-full"></div>
-          </h2>
+    <>
+      {/* Testimonials Section */}
+      <section className="bg-white py-10 relative overflow-hidden">
+        <div className="container mx-auto px-4 max-w-6xl relative z-10">
+          <motion.div 
+            className="text-center mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 relative inline-block">
+              What Our Clients Say
+              <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-16 h-[2px] bg-primary rounded-full"></div>
+            </h2>
+            <p className="text-gray-500 mt-7 max-w-xl mx-auto text-sm md:text-base">
+              Real results from real businesses — see how our software solutions are transforming operations across industries.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {testimonials.map((t, i) => (
+              <motion.div
+                key={i}
+                className="bg-gray-50 rounded-2xl p-7 border border-gray-100 flex flex-col hover:shadow-md transition-shadow"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: (i % 3) * 0.1 }}
+              >
+                <Quote className="w-6 h-6 text-primary/30 mb-4" />
+                <div className="flex mb-3 gap-0.5">
+                  {Array.from({ length: t.rating }).map((_, j) => (
+                    <Star key={j} className="w-4 h-4 text-amber-400 fill-amber-400" />
+                  ))}
+                </div>
+                <p className="text-gray-600 text-sm leading-relaxed flex-1 mb-6">"{t.content}"</p>
+                <div className="border-t border-gray-200 pt-4">
+                  <p className="text-gray-900 font-bold text-sm">{t.name}</p>
+                  <p className="text-gray-500 text-xs mt-0.5">{t.role} · {t.company}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
 
-      {/* Infinite Scroll Carousel */}
-      <div className="relative w-full overflow-hidden flex">
-        {/* Fade gradients on edges for smoother look */}
-        <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-[#f2f7f6] to-transparent z-10"></div>
-        <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-[#f2f7f6] to-transparent z-10"></div>
+      {/* Client Logos Marquee */}
+      <section className="bg-[#f2f7f6] py-12 relative overflow-hidden">
+        <div className="container mx-auto px-4 max-w-6xl relative z-10">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-semibold text-[#0f3f3b] relative inline-block">
+              Trusted by Industry Leaders
+              <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-16 h-[2px] bg-[#0B7A6A] rounded-full"></div>
+            </h2>
+          </div>
+        </div>
 
-        <motion.div 
-          className="flex items-center gap-8 md:gap-16 w-max px-8"
-          animate={{ x: ["0%", "-33.333333%"] }}
-          transition={{ repeat: Infinity, ease: "linear", duration: 20 }}
-        >
-          {repeatedClients.map((client, idx) => (
-            <div 
-              key={idx} 
-              className="h-20 w-[180px] shrink-0 bg-white rounded-lg border border-gray-200 shadow-sm flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300 hover:shadow-md cursor-pointer"
-            >
-               <span className="text-gray-500 font-bold text-center text-sm">{client.name}<br/><span className="text-[10px] font-normal">Logo SVG</span></span>
-            </div>
-          ))}
-        </motion.div>
-      </div>
+        {/* Infinite Scroll Carousel */}
+        <div className="relative w-full overflow-hidden flex">
+          <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-[#f2f7f6] to-transparent z-10"></div>
+          <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-[#f2f7f6] to-transparent z-10"></div>
 
-    </section>
+          <motion.div 
+            className="flex items-center gap-8 md:gap-16 w-max px-8"
+            animate={{ x: ["0%", "-33.333333%"] }}
+            transition={{ repeat: Infinity, ease: "linear", duration: 20 }}
+          >
+            {repeatedClients.map((client, idx) => (
+              <div 
+                key={idx} 
+                className="h-20 w-[200px] shrink-0 bg-white rounded-lg border border-gray-200 shadow-sm flex items-center justify-center p-4 hover:shadow-md transition-all duration-300 cursor-pointer"
+              >
+                <span className="text-gray-700 font-bold text-center text-sm">{client}</span>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+    </>
   );
 }

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Phone, Mail, ChevronUp } from 'lucide-react';
+import { Phone, Mail, MapPin, ChevronUp } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function Footer() {
@@ -28,11 +28,11 @@ export default function Footer() {
             <div className="flex flex-col items-start">
                {/* Jeenora Logo */}
                <div className="bg-white p-2 pr-6 rounded-xl mb-4 flex items-center justify-center shadow-md overflow-hidden">
-                 <img src="/logo192.png" alt="Jeenora Logo" className="h-[40px] w-auto object-contain scale-[1.3] origin-left ml-2" />
+                 <img src="/logo192.png" alt="Jeenora IT Solutions Logo" className="h-[40px] w-auto object-contain scale-[1.3] origin-left ml-2" />
                </div>
             </div>
             <p className="text-white/80 text-sm leading-relaxed pr-4">
-              Jeenora is an enterprise software company specializing in custom billing architectures, advanced inventory management, and complete operational dashboards.
+              Jeenora IT Solutions — your trusted software development partner for MFI platforms, POS systems, custom ERP, mobile apps, and enterprise digital transformation.
             </p>
           </motion.div>
 
@@ -48,16 +48,16 @@ export default function Footer() {
               Quick Links
             </h4>
             <ul className="flex flex-col space-y-4 text-white/80 text-sm">
-              <li><Link href="#" className="hover:text-white transition-colors">Home</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">About Us</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Products</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">FAQ's</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Contact Us</Link></li>
+              <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
+              <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
+              <li><Link href="#services" className="hover:text-white transition-colors">Services</Link></li>
+              <li><Link href="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
               <li><Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link></li>
+              <li><Link href="#" className="hover:text-white transition-colors">Terms of Service</Link></li>
             </ul>
           </motion.div>
 
-          {/* 3. Products */}
+          {/* 3. Services */}
           <motion.div 
             className="flex flex-col space-y-6"
             initial={{ opacity: 0, y: 30 }}
@@ -66,13 +66,15 @@ export default function Footer() {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <h4 className="text-white font-semibold text-lg border-l-2 border-[#eab308] pl-3 h-6 flex items-center">
-              Products
+              Our Services
             </h4>
             <ul className="flex flex-col space-y-4 text-white/80 text-sm">
-              <li><Link href="#" className="hover:text-white transition-colors">Billing & Tax</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Inventory Control</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Multi-Branch POS</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Custom Development</Link></li>
+              <li><Link href="#services" className="hover:text-white transition-colors">MFI Software</Link></li>
+              <li><Link href="#services" className="hover:text-white transition-colors">Restaurant POS</Link></li>
+              <li><Link href="#services" className="hover:text-white transition-colors">ERP & CRM Development</Link></li>
+              <li><Link href="#services" className="hover:text-white transition-colors">Mobile App Development</Link></li>
+              <li><Link href="#services" className="hover:text-white transition-colors">E-Commerce Solutions</Link></li>
+              <li><Link href="#services" className="hover:text-white transition-colors">Cloud Deployment</Link></li>
             </ul>
           </motion.div>
 
@@ -85,17 +87,21 @@ export default function Footer() {
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <h4 className="text-white font-semibold text-lg border-l-2 border-[#eab308] pl-3 h-6 flex items-center">
-              Contact Information
+              Contact Us
             </h4>
-            <div className="flex flex-col space-y-6 text-white/80 text-sm">
+            <div className="flex flex-col space-y-5 text-white/80 text-sm">
+              <div className="flex items-start space-x-3">
+                <div className="bg-white p-1.5 rounded text-primary mt-0.5 shrink-0">
+                  <MapPin size={14} />
+                </div>
+                <span className="leading-relaxed">Cottage No.4 Bangalore Palace,<br/>Vasanth Nagar, Bangalore – 560052</span>
+              </div>
               <div className="flex items-start space-x-3">
                 <div className="bg-white p-1.5 rounded text-primary mt-1 shrink-0">
                   <Phone size={16} fill="currentColor" />
                 </div>
-                <div className="flex flex-col space-y-2">
+                <div className="flex flex-col space-y-1">
                   <span>080-29905860</span>
-                  <span>080-29905862</span>
-                  <span>080-29905863</span>
                   <span>+91 96067 99418</span>
                 </div>
               </div>
@@ -103,15 +109,15 @@ export default function Footer() {
                 <div className="bg-white p-1.5 rounded text-primary shrink-0">
                   <Mail size={16} />
                 </div>
-                <div className="flex flex-col space-y-2">
-                  <span>info@logsafe.in</span>
-                  <span>support@logsafe.in</span>
+                <div className="flex flex-col space-y-1">
+                  <span>info@jeenora.com</span>
+                  <span>support@jeenora.com</span>
                 </div>
               </div>
             </div>
           </motion.div>
 
-          {/* 5. Support & Downloads */}
+          {/* 5. App Downloads & Hours */}
           <motion.div 
             className="lg:col-span-1 flex flex-col space-y-6"
             initial={{ opacity: 0, y: 30 }}
@@ -120,31 +126,24 @@ export default function Footer() {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <h4 className="text-white font-semibold text-lg border-l-2 border-[#eab308] pl-3 h-6 flex items-center">
-              Support & Downloads
+              Business Hours
             </h4>
             <p className="text-white/60 text-sm leading-relaxed">
-              Our unified systems help operational directors manage multi-branch logistics, automate critical workflows, and access real-time financial reporting effortlessly.
+              We are available Monday through Saturday. Our support team responds within 4 business hours for all critical requests.
             </p>
-            <div className="flex flex-col space-y-3 mt-2">
-              <button className="bg-black hover:bg-gray-900 transition-colors rounded-xl flex items-center px-4 py-2 w-[160px] border border-white/10">
-                <div className="flex-shrink-0 mr-3">
-                  <svg viewBox="0 0 512 512" className="w-6 h-6 text-white"><path fill="currentColor" d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/></svg>
-                </div>
-                <div className="flex flex-col text-left">
-                  <span className="text-[10px] text-white/80 font-medium uppercase leading-none mb-1">Get it on</span>
-                  <span className="text-sm text-white font-semibold leading-none">Google Play</span>
-                </div>
-              </button>
-
-              <button className="bg-black hover:bg-gray-900 transition-colors rounded-xl flex items-center px-4 py-2 w-[160px] border border-white/10">
-                <div className="flex-shrink-0 mr-3">
-                  <svg viewBox="0 0 384 512" className="w-6 h-6 text-white"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
-                </div>
-                <div className="flex flex-col text-left">
-                  <span className="text-[10px] text-white/80 font-medium uppercase leading-none mb-1">Download on the</span>
-                  <span className="text-sm text-white font-semibold leading-none">App Store</span>
-                </div>
-              </button>
+            <div className="bg-white/10 rounded-xl p-4 border border-white/10 space-y-2">
+              <div className="flex justify-between text-sm">
+                <span className="text-white/70">Mon – Fri</span>
+                <span className="text-white font-medium">9:00 AM – 7:00 PM</span>
+              </div>
+              <div className="flex justify-between text-sm">
+                <span className="text-white/70">Saturday</span>
+                <span className="text-white font-medium">9:00 AM – 5:00 PM</span>
+              </div>
+              <div className="flex justify-between text-sm">
+                <span className="text-white/70">Emergency</span>
+                <span className="text-green-400 font-medium">24/7 Support</span>
+              </div>
             </div>
           </motion.div>
           
@@ -180,7 +179,7 @@ export default function Footer() {
 
           {/* Copyright text */}
           <div className="text-white/80 text-sm text-center md:text-right flex-1">
-            Copyright © 2026 Jeenora. All rights reserved. Designed by <span className="text-primary font-semibold bg-white/10 px-1 rounded">Jeenora</span>
+            Copyright © 2025 Jeenora IT Solutions. All rights reserved. Designed & Developed by <span className="text-primary font-semibold bg-white/10 px-1 rounded">Jeenora</span>
           </div>
 
           {/* Scroll to Top Button */}

@@ -1,72 +1,71 @@
 "use client";
 
 import React from 'react';
-import { Map, ScanFace, Users, Cloud, FileSignature, Presentation, LayoutDashboard, Headset } from 'lucide-react';
+import { Shield, TrendingUp, Layers, Gauge, Headphones, RefreshCw, GitMerge, Globe } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function KeyFeatures() {
   const features = [
     {
-      title: "Automated Reconciliation",
-      description: "Payments flow directly into your ledger. Say goodbye to manual bank reconciliations and complex taxation matching.",
-      icon: Map
+      title: "Scalable Architecture",
+      description: "Our systems are built to grow with your business — from 100 transactions per day to millions, without re-engineering.",
+      icon: TrendingUp
     },
     {
-      title: "Operational Efficiency",
-      description: "Automate habitual administrative tasks across all departments, cutting down manual data entry by up to 80%.",
-      icon: ScanFace
+      title: "End-to-End Security",
+      description: "Role-based access control, data encryption, audit logs, and VAPT-ready infrastructure protect your most sensitive data.",
+      icon: Shield
     },
     {
-      title: "Real-Time Inventory Control",
-      description: "Maintain accurate stock visibility across unlimited physical locations and prevent costly stockouts automatically.",
-      icon: Users
+      title: "Process Automation",
+      description: "Eliminate repetitive manual work. From auto-invoicing to EMI reminders, we automate the workflows that slow your team down.",
+      icon: RefreshCw
     },
     {
-      title: "Revenue Growth",
-      description: "Accelerate collections with integrated payment links and uncover new revenue streams through actionable data insights.",
-      icon: Cloud
+      title: "High Performance",
+      description: "Optimised database queries, caching layers, and CDN delivery ensure sub-second response times even under peak load.",
+      icon: Gauge
     },
     {
-      title: "Multi-Branch Visibility",
-      description: "Consolidate operations from hundreds of physical retail stores or warehouses into a single unified dashboard.",
-      icon: FileSignature
+      title: "Seamless Integration",
+      description: "Connect payment gateways, ERPs, logistics APIs, and third-party tools — all through secure, well-documented APIs.",
+      icon: GitMerge
     },
     {
-      title: "Business Analytics",
-      description: "Generate deep financial reports and operational metrics instantly, empowering executives to make data-driven decisions.",
-      icon: Presentation
+      title: "Multi-Platform Delivery",
+      description: "Web portals, Android apps, iOS apps, and desktop dashboards — all sharing the same backend, built once, deployed everywhere.",
+      icon: Layers
     },
     {
-      title: "Digital Transformation",
-      description: "Migrate seamlessly from legacy ERPs to modern, fast, cloud-based architectures designed specifically for your workflows.",
-      icon: LayoutDashboard
+      title: "Global Accessibility",
+      description: "Multi-currency, multi-language, and multi-timezone support for businesses operating across regions and borders.",
+      icon: Globe
     },
     {
-      title: "Enterprise-Grade Reliability",
-      description: "Built on highly secure, 99.9% uptime infrastructure capable of handling high-volume transaction loads flawlessly.",
-      icon: Headset
+      title: "24/7 Technical Support",
+      description: "Dedicated support engineers, SLA-backed response times, and proactive monitoring so your operations never stop.",
+      icon: Headphones
     }
   ];
 
   return (
-    <section className="bg-primary py-12 md:py-20 relative overflow-hidden">
+    <section className="bg-primary py-10 md:py-14 relative overflow-hidden">
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
         
         {/* Header Section */}
         <motion.div 
-          className="text-center mb-16 max-w-4xl mx-auto"
+          className="text-center mb-10 max-w-4xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-4xl font-semibold text-white mb-6 relative inline-block">
-            Key Features and Benefits:
+          <h2 className="text-3xl md:text-4xl font-semibold text-white mb-4 relative inline-block">
+            Built for Business. Designed for Scale.
             <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-12 h-[2px] bg-white/50 rounded-full"></div>
           </h2>
-          <p className="text-white/90 text-sm md:text-base leading-relaxed mt-6">
-            Our custom enterprise software offers an array of powerful capabilities that can revolutionize how you manage operations and streamline
-            complex administrative processes across all your locations. Core business outcomes include:
+          <p className="text-white/90 text-sm md:text-base leading-relaxed mt-3">
+            Every software product we build is engineered around the outcomes your business needs most — speed, reliability, security, and the ability to scale without friction. These are not just features; they are our engineering principles.
           </p>
         </motion.div>
 

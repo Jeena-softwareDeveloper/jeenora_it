@@ -9,15 +9,15 @@ export default function TopBanner() {
         <div className="flex items-center gap-6">
           <a href="tel:08029905860" className="flex items-center gap-2 hover:text-white transition-colors">
             <Phone className="w-3.5 h-3.5" />
-            08029905860
+            080-29905860
           </a>
-          <a href="mailto:info@logsafe.in" className="flex items-center gap-2 hover:text-white transition-colors">
+          <a href="mailto:info@jeenora.com" className="flex items-center gap-2 hover:text-white transition-colors">
             <Mail className="w-3.5 h-3.5" />
-            info@logsafe.in
+            info@jeenora.com
           </a>
           <div className="flex items-center gap-2">
             <Clock className="w-3.5 h-3.5" />
-            Open Hours:Mon-Sat- 9:00am- 7:00pm
+            Mon – Sat: 9:00 AM – 7:00 PM IST
           </div>
         </div>
 

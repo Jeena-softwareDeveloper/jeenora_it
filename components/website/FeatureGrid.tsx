@@ -1,37 +1,56 @@
 "use client";
 
-import { Cloud, MapPin, Clock, ScanFace, Radio, FileText, BarChart, FileSpreadsheet, UserCog } from "lucide-react";
+import { Cloud, ShieldCheck, Clock, Zap, Code2, GitBranch, BarChart2, Users, Lock } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function FeatureGrid() {
   const features = [
-    { icon: Cloud, label: "Cloud-Based Architecture" },
-    { icon: MapPin, label: "Multi-Branch Tracking" },
-    { icon: Clock, label: "Real-Time Sync" },
-    { icon: ScanFace, label: "Automated Reconciliation" },
-    { icon: Radio, label: "Live Inventory Routing" },
-    { icon: FileText, label: "Complex Tax Billing" },
-    { icon: BarChart, label: "Centralized Analytics" },
-    { icon: FileSpreadsheet, label: "B2B Dealer Management" },
-    { icon: UserCog, label: "Granular Access Roles" },
+    { icon: Cloud, label: "Cloud-Native Architecture" },
+    { icon: ShieldCheck, label: "Enterprise Security" },
+    { icon: Clock, label: "Real-Time Data Sync" },
+    { icon: Zap, label: "High-Performance APIs" },
+    { icon: Code2, label: "Clean Code Standards" },
+    { icon: GitBranch, label: "Agile Delivery" },
+    { icon: BarChart2, label: "Analytics & Reporting" },
+    { icon: Users, label: "Multi-Role Access Control" },
+    { icon: Lock, label: "Data Privacy Compliant" },
   ];
 
   return (
-    <section className="bg-primary py-12 relative overflow-hidden">
+    <section className="bg-primary py-10 relative overflow-hidden">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
           
-          {/* Left: Mobile App Mockups placeholder */}
+          {/* Left: Why Choose Us */}
           <motion.div 
-            className="relative h-[400px] lg:h-[450px] w-full flex items-center justify-center"
+            className="relative w-full flex items-center justify-start"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6 }}
           >
-             <div className="w-full h-full border-2 border-dashed border-white/20 rounded-3xl flex flex-col items-center justify-center space-y-4 bg-white/5">
-                <p className="text-white/40 font-medium text-center">Enterprise Dashboard Mockups Illustration<br/><span className="text-xs">Drop your Figma SVG here</span></p>
-             </div>
+            <div className="space-y-6 max-w-lg">
+              <span className="inline-block bg-white/10 border border-white/20 text-white text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full">Why Choose Us</span>
+              <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight">
+                Built for Reliability.<br/>Engineered for Growth.
+              </h2>
+              <p className="text-white/80 text-sm md:text-base leading-relaxed">
+                Every solution we deliver is architected for scalability, security, and long-term performance. We combine deep domain expertise with modern engineering practices to ensure your software investment pays dividends for years to come.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                {[
+                  { stat: "200+", label: "Projects Delivered" },
+                  { stat: "150+", label: "Happy Clients" },
+                  { stat: "8+", label: "Years of Experience" },
+                  { stat: "12+", label: "Industries Served" },
+                ].map((item, i) => (
+                  <div key={i} className="bg-white/10 rounded-xl px-5 py-4 border border-white/10">
+                    <p className="text-white font-extrabold text-2xl">{item.stat}</p>
+                    <p className="text-white/70 text-xs mt-1">{item.label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </motion.div>
 
           {/* Right: Feature Grid 3x3 */}

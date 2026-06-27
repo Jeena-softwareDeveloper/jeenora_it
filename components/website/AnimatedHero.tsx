@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { Users, MonitorSmartphone } from "lucide-react";
 
 export default function AnimatedHero() {
   const containerVariants = {
@@ -19,17 +18,16 @@ export default function AnimatedHero() {
   return (
     <section className="relative pt-0 pb-12 bg-primary z-0 rounded-br-[5rem] lg:rounded-br-[10rem]">
       
-      {/* Top merge gradient: Perfectly matches the Navbar horizontally, but fades out vertically into the solid blue hero */}
+      {/* Top merge gradient */}
       <div 
         className="absolute top-0 left-0 w-full h-64 bg-gradient-to-r from-white from-10% via-primary via-50% to-primary pointer-events-none -z-10 hidden md:block" 
         style={{ maskImage: 'linear-gradient(to bottom, black, transparent)', WebkitMaskImage: 'linear-gradient(to bottom, black, transparent)' }} 
       />
 
-      {/* Subtle Background Pattern (Overlapping Circles) */}
+      {/* Subtle Background Pattern */}
       <div className="absolute top-0 right-0 w-full h-full overflow-hidden pointer-events-none -z-10">
         <div className="absolute top-20 right-20 w-64 h-64 border-[30px] border-black/5 rounded-full" />
         <div className="absolute bottom-40 right-1/4 w-96 h-96 border-[40px] border-black/5 rounded-full" />
-        {/* Dot pattern matrix */}
         <div className="absolute top-1/4 left-[45%] w-32 h-32" style={{ backgroundImage: 'radial-gradient(circle, rgba(0,0,0,0.1) 2px, transparent 2px)', backgroundSize: '16px 16px' }} />
       </div>
 
@@ -46,18 +44,21 @@ export default function AnimatedHero() {
             animate="visible"
           >
             <motion.h1 variants={itemVariants} className="text-3xl md:text-[2.2rem] font-medium tracking-tight text-white leading-[1.3] max-w-xl">
-              Automate Operations. <br className="hidden md:block"/>
-              Scale Your Enterprise with <br className="hidden md:block"/>
-              intelligent software solutions for <br className="hidden md:block"/>
-              <span className="font-bold">Total Business Management.</span>
+              Build Faster. Scale Smarter. <br className="hidden md:block"/>
+              Deliver More with <br className="hidden md:block"/>
+              <span className="font-bold">Enterprise-Grade Software Solutions.</span>
             </motion.h1>
             
-            <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-4">
+            <motion.p variants={itemVariants} className="text-white/80 text-sm md:text-base leading-relaxed max-w-md">
+              From MFI & POS Software to Custom ERP, Mobile Apps, and Cloud Deployment — we engineer solutions that automate operations, drive revenue, and eliminate inefficiency.
+            </motion.p>
+
+            <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-4 pt-2">
               <Link href="/contact" className="h-10 px-8 bg-gray-900 text-white font-bold text-xs tracking-wider flex items-center justify-center hover:bg-gray-800 transition-colors shadow-sm">
-                CONSULT EXPERT
+                SCHEDULE CONSULTATION
               </Link>
               <Link href="#services" className="h-10 px-8 bg-white text-gray-900 font-bold text-xs tracking-wider flex items-center justify-center hover:bg-gray-100 transition-colors shadow-sm">
-                EXPLORE SOLUTIONS
+                EXPLORE SERVICES
               </Link>
             </motion.div>
           </motion.div>
@@ -75,7 +76,7 @@ export default function AnimatedHero() {
             >
               <Image 
                 src="/mockup-final.png" 
-                alt="Logsafe App Display" 
+                alt="Jeenora Software Platform" 
                 fill 
                 className="object-contain scale-[1.15]" 
                 priority 
@@ -98,7 +99,6 @@ export default function AnimatedHero() {
             >
               <div className="flex justify-between items-start mb-4">
                 <div className="w-12 h-12 bg-[#22c55e]/10 rounded-xl flex items-center justify-center border border-[#22c55e]/20 overflow-hidden relative">
-                  {/* Micro-UI: Invoice/Receipt */}
                   <div className="w-6 h-8 bg-white shadow-sm rounded-sm flex flex-col p-1.5 gap-1 translate-y-1">
                     <div className="w-full h-1 bg-gray-200 rounded-full"></div>
                     <div className="w-3/4 h-1 bg-gray-200 rounded-full"></div>
@@ -109,15 +109,15 @@ export default function AnimatedHero() {
                   </div>
                 </div>
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2 leading-tight">Advanced Billing Software and <br/> Tax Compliance</h3>
-              <p className="text-xs text-gray-500 mb-5">Automate complex invoicing workflows, eliminate manual reconciliation, and drive revenue growth effortlessly.</p>
+              <h3 className="text-lg font-bold text-gray-900 mb-2 leading-tight">Restaurant POS & MFI <br/>Software Built to Scale</h3>
+              <p className="text-xs text-gray-500 mb-5">Automate billing, manage tables, and handle loan disbursements with precision — purpose-built for your industry vertical.</p>
               
               <div className="flex items-center gap-3">
                 <Link href="/contact" className="h-9 px-5 bg-primary text-primary-foreground font-bold text-[11px] tracking-wider rounded-full flex items-center justify-center hover:opacity-90 transition-opacity">
-                  GET IN TOUCH
+                  REQUEST DEMO
                 </Link>
-                <Link href="/read-more" className="h-9 px-5 bg-transparent text-primary border border-primary font-bold text-[11px] tracking-wider rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
-                  READ MORE
+                <Link href="#services" className="h-9 px-5 bg-transparent text-primary border border-primary font-bold text-[11px] tracking-wider rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
+                  LEARN MORE
                 </Link>
               </div>
             </motion.div>
@@ -130,7 +130,6 @@ export default function AnimatedHero() {
             >
               <div className="flex justify-between items-start mb-4">
                 <div className="w-12 h-12 bg-[#ff6b00]/10 rounded-xl flex items-center justify-center border border-[#ff6b00]/20 overflow-hidden relative">
-                  {/* Micro-UI: Bar Chart / Sync */}
                   <div className="flex items-end gap-1 w-6 h-6">
                     <div className="w-1.5 h-3 bg-[#ff6b00]/40 rounded-t-sm"></div>
                     <div className="w-1.5 h-4 bg-[#ff6b00]/60 rounded-t-sm"></div>
@@ -138,15 +137,15 @@ export default function AnimatedHero() {
                   </div>
                 </div>
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2 leading-tight">Multi-Branch Inventory Sync & <br/> Real-Time Analytics</h3>
-              <p className="text-xs text-gray-500 mb-5">Centralize operations to prevent stockouts and gain absolute visibility over unlimited physical locations.</p>
+              <h3 className="text-lg font-bold text-gray-900 mb-2 leading-tight">Custom ERP, CRM & <br/> Mobile App Development</h3>
+              <p className="text-xs text-gray-500 mb-5">End-to-end development of Android, iOS, and cross-platform apps with cloud deployment and API integration for maximum business agility.</p>
 
               <div className="flex items-center gap-3">
                 <Link href="/contact" className="h-9 px-5 bg-primary text-primary-foreground font-bold text-[11px] tracking-wider rounded-full flex items-center justify-center hover:opacity-90 transition-opacity">
-                  GET IN TOUCH
+                  GET STARTED
                 </Link>
-                <Link href="/read-more" className="h-9 px-5 bg-transparent text-primary border border-primary font-bold text-[11px] tracking-wider rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
-                  READ MORE
+                <Link href="#services" className="h-9 px-5 bg-transparent text-primary border border-primary font-bold text-[11px] tracking-wider rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
+                  VIEW SERVICES
                 </Link>
               </div>
             </motion.div>

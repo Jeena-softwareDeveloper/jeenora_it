@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { AlertCircle, ClipboardCheck, Users, TrendingUp, Layers } from 'lucide-react';
+import { Code2, Smartphone, Globe, ShieldCheck } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function HrmsIntro() {
@@ -19,55 +19,62 @@ export default function HrmsIntro() {
             transition={{ duration: 0.7 }}
           >
             <h2 className="text-4xl md:text-[2.75rem] font-bold leading-[1.2]">
-              Architecting the future of
+              Your Technology Partner
               <br />
-              Enterprise Operations.
+              for Every Business Challenge.
             </h2>
             
             <p className="text-white/90 text-sm md:text-base leading-[1.8] max-w-[500px]">
-              We are not just a software agency; we are your digital transformation partners. Our custom enterprise solutions—ranging from complex billing software to multi-branch inventory management systems—enable growing businesses to automate their habitual operations. We eliminate data silos and deliver absolute visibility over your physical stores, restaurants, and wholesale networks on a single, secure dashboard.
+              We are not just a software company — we are your long-term digital transformation partner. From Microfinance (MFI) platforms and Restaurant POS systems to Custom ERP, B2B portals, and cross-platform mobile apps, we engineer solutions that eliminate inefficiency, reduce costs, and power sustainable growth. Every line of code we write is built to solve a real business problem.
             </p>
 
             <div className="flex flex-wrap items-center gap-4 pt-4">
               <div className="bg-white rounded-lg px-6 py-3 flex items-center justify-center min-w-[160px] shadow-sm border-l-4 border-primary">
                 <span className="text-slate-800 font-extrabold text-lg tracking-tight uppercase">
-                  Inventory
+                  Enterprise
                 </span>
               </div>
               
               <div className="bg-white rounded-lg px-6 py-3 flex items-center justify-center min-w-[160px] shadow-sm border-l-4 border-[#ff6b00]">
                 <span className="text-slate-800 font-extrabold text-lg tracking-tight uppercase">
-                  E-Commerce
+                  Scalable
+                </span>
+              </div>
+
+              <div className="bg-white rounded-lg px-6 py-3 flex items-center justify-center min-w-[160px] shadow-sm border-l-4 border-[#22c55e]">
+                <span className="text-slate-800 font-extrabold text-lg tracking-tight uppercase">
+                  Secure
                 </span>
               </div>
             </div>
           </motion.div>
 
-          {/* Right Content - Video Embed */}
+          {/* Right Content - Company Highlights */}
           <motion.div 
-            className="relative w-full aspect-[4/3] bg-[#232323] rounded-2xl overflow-hidden shadow-2xl flex flex-col justify-start items-start p-6 text-white font-sans"
+            className="relative w-full aspect-[4/3] bg-[#0a2244] rounded-2xl overflow-hidden shadow-2xl flex flex-col justify-center items-start p-8 text-white font-sans border border-white/10"
             initial={{ opacity: 0, scale: 0.9, x: 20 }}
             whileInView={{ opacity: 1, scale: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            <div className="flex items-start gap-4">
-              <AlertCircle className="w-6 h-6 text-white mt-1 shrink-0" />
-              <div>
-                <h3 className="font-semibold text-lg leading-none mb-2">Video unavailable</h3>
-                <p className="text-sm text-gray-300 leading-snug">
-                  This video is no longer available because the YouTube account
-                  <br />
-                  associated with this video has been closed.
-                </p>
-              </div>
-            </div>
-            
-            {/* YouTube watermark mock */}
-            <div className="absolute bottom-4 right-4 opacity-50">
-              <div className="w-10 h-7 bg-white/20 rounded flex items-center justify-center">
-                <div className="w-0 h-0 border-t-[5px] border-t-transparent border-l-[8px] border-l-white border-b-[5px] border-b-transparent ml-1" />
-              </div>
+            <div className="w-full space-y-5">
+              <h3 className="font-bold text-xl text-white mb-6 border-b border-white/10 pb-4">Why Businesses Choose Jeenora</h3>
+              {[
+                { icon: Code2, title: "Full-Stack Development", desc: "Web, mobile, API & cloud under one roof" },
+                { icon: Smartphone, title: "Android · iOS · Cross-Platform", desc: "Native performance, single codebase" },
+                { icon: Globe, title: "E-Commerce & B2B Portals", desc: "Revenue-driving digital storefronts" },
+                { icon: ShieldCheck, title: "99.9% Uptime SLA", desc: "Enterprise-grade reliability & support" },
+              ].map((item, i) => (
+                <div key={i} className="flex items-start gap-4">
+                  <div className="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center shrink-0">
+                    <item.icon className="w-4 h-4 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-white font-semibold text-sm">{item.title}</p>
+                    <p className="text-white/60 text-xs mt-0.5">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </motion.div>
 
@@ -88,18 +95,17 @@ export default function HrmsIntro() {
               <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-bl-[100px] -z-10" />
               <div className="w-full flex justify-between items-start mb-6">
                 <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center border border-primary/20">
-                  {/* Micro-UI: Dashboard / POS */}
                   <div className="w-6 h-6 border-2 border-primary rounded-md grid grid-cols-2 gap-0.5 p-0.5">
                     <div className="bg-primary/50 rounded-sm"></div>
                     <div className="bg-primary/50 rounded-sm"></div>
                     <div className="bg-primary rounded-sm col-span-2"></div>
                   </div>
                 </div>
-                <span className="text-[10px] font-bold text-primary tracking-widest uppercase bg-primary/10 px-2 py-1 rounded-full">Architecture</span>
+                <span className="text-[10px] font-bold text-primary tracking-widest uppercase bg-primary/10 px-2 py-1 rounded-full">Software</span>
               </div>
-              <h4 className="text-xl font-extrabold text-gray-900 mb-2">POS Systems</h4>
+              <h4 className="text-xl font-extrabold text-gray-900 mb-2">MFI & POS Systems</h4>
               <p className="text-gray-500 text-sm leading-relaxed">
-                We deploy robust POS architectures capable of seamlessly managing unlimited retail and restaurant locations.
+                Purpose-built Microfinance and Point-of-Sale software for restaurants, retail chains, and NBFCs — handling high transaction volumes with zero downtime.
               </p>
             </motion.div>
             
@@ -113,7 +119,6 @@ export default function HrmsIntro() {
               <div className="absolute top-0 right-0 w-24 h-24 bg-[#ff6b00]/5 rounded-bl-[100px] -z-10" />
               <div className="w-full flex justify-between items-start mb-6">
                 <div className="w-12 h-12 bg-[#ff6b00]/10 rounded-2xl flex items-center justify-center border border-[#ff6b00]/20">
-                  {/* Micro-UI: Inventory Tracking Line */}
                   <div className="relative w-6 h-6">
                     <div className="absolute bottom-1 left-0 w-1.5 h-1.5 bg-[#ff6b00] rounded-full"></div>
                     <div className="absolute bottom-3 left-2 w-1.5 h-1.5 bg-[#ff6b00] rounded-full"></div>
@@ -123,11 +128,11 @@ export default function HrmsIntro() {
                     </svg>
                   </div>
                 </div>
-                <span className="text-[10px] font-bold text-[#ff6b00] tracking-widest uppercase bg-[#ff6b00]/10 px-2 py-1 rounded-full">Logistics</span>
+                <span className="text-[10px] font-bold text-[#ff6b00] tracking-widest uppercase bg-[#ff6b00]/10 px-2 py-1 rounded-full">Mobile</span>
               </div>
-              <h4 className="text-xl font-extrabold text-gray-900 mb-2">Smart Inventory</h4>
+              <h4 className="text-xl font-extrabold text-gray-900 mb-2">App Development</h4>
               <p className="text-gray-500 text-sm leading-relaxed">
-                Our dynamic inventory systems automatically trigger procurement and completely prevent costly stockouts.
+                Android, iOS, and cross-platform mobile applications built with modern frameworks for exceptional user experience and performance at scale.
               </p>
             </motion.div>
 
@@ -141,7 +146,6 @@ export default function HrmsIntro() {
               <div className="absolute top-0 right-0 w-24 h-24 bg-[#22c55e]/5 rounded-bl-[100px] -z-10" />
               <div className="w-full flex justify-between items-start mb-6">
                 <div className="w-12 h-12 bg-[#22c55e]/10 rounded-2xl flex items-center justify-center border border-[#22c55e]/20">
-                  {/* Micro-UI: Integration Nodes */}
                   <div className="relative w-6 h-6 flex items-center justify-center">
                     <div className="absolute top-0 left-1 w-2 h-2 bg-[#22c55e] rounded-full"></div>
                     <div className="absolute bottom-0 left-0 w-2 h-2 bg-[#22c55e] rounded-full"></div>
@@ -150,11 +154,11 @@ export default function HrmsIntro() {
                     <div className="absolute bottom-1.5 left-1.5 w-3 h-0.5 bg-[#22c55e]/50 -rotate-45"></div>
                   </div>
                 </div>
-                <span className="text-[10px] font-bold text-[#22c55e] tracking-widest uppercase bg-[#22c55e]/10 px-2 py-1 rounded-full">Integration</span>
+                <span className="text-[10px] font-bold text-[#22c55e] tracking-widest uppercase bg-[#22c55e]/10 px-2 py-1 rounded-full">Cloud</span>
               </div>
-              <h4 className="text-xl font-extrabold text-gray-900 mb-2">Unified Operations</h4>
+              <h4 className="text-xl font-extrabold text-gray-900 mb-2">Cloud & API Integration</h4>
               <p className="text-gray-500 text-sm leading-relaxed">
-                We unify all core operations including B2B e-commerce, complex tax billing, logistics, and analytics.
+                Secure cloud deployment, robust API development, and third-party integrations that connect your entire digital ecosystem into one unified platform.
               </p>
             </motion.div>
           </div>
