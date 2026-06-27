@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { EASE_OUT } from '@/lib/animations';
 
 const industries = [
   { label: "Microfinance & NBFC", color: "bg-blue-600" },
@@ -53,15 +54,16 @@ export default function AppScreenshots() {
             </p>
           </motion.div>
 
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
+          <div className="flex flex-wrap justify-center gap-2.5 sm:gap-3 mb-12">
             {industries.map((industry, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, scale: 0.9, y: 10 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.06 }}
-                className={`${industry.color} text-white font-semibold text-sm px-6 py-3 rounded-full shadow-sm hover:scale-105 transition-transform cursor-default`}
+                transition={{ duration: 0.4, delay: i * 0.06, ease: EASE_OUT }}
+                whileHover={{ scale: 1.08, y: -3, transition: { type: "spring", stiffness: 400, damping: 15 } }}
+                className={`${industry.color} text-white font-semibold text-xs sm:text-sm px-5 sm:px-6 py-2.5 sm:py-3 rounded-full shadow-sm cursor-default`}
               >
                 {industry.label}
               </motion.div>
@@ -93,15 +95,16 @@ export default function AppScreenshots() {
             {developmentSteps.map((step, i) => (
               <motion.div
                 key={i}
-                className="relative bg-gray-50 rounded-2xl p-7 border border-gray-100 hover:shadow-md transition-shadow group"
+                className="relative bg-gray-50 rounded-2xl p-6 sm:p-7 border border-gray-100 hover:shadow-lg hover:border-primary/20 transition-[box-shadow,border-color] duration-300 group overflow-hidden"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
+                transition={{ duration: 0.5, delay: i * 0.08, ease: EASE_OUT }}
+                whileHover={{ y: -6, transition: { type: "spring", stiffness: 300, damping: 20 } }}
               >
-                <span className="text-6xl font-extrabold text-primary/8 absolute top-4 right-5 select-none leading-none">{step.step}</span>
-                <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-                  <span className="text-primary font-extrabold text-base">{step.step}</span>
+                <span className="text-6xl font-extrabold text-primary/8 absolute top-4 right-5 select-none leading-none transition-transform duration-300 group-hover:scale-110">{step.step}</span>
+                <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center mb-4 transition-colors duration-300 group-hover:bg-primary">
+                  <span className="text-primary font-extrabold text-base transition-colors duration-300 group-hover:text-white">{step.step}</span>
                 </div>
                 <h3 className="text-gray-900 font-bold text-lg mb-2">{step.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{step.desc}</p>
@@ -116,9 +119,11 @@ export default function AppScreenshots() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <Link href="/contact" className="inline-flex items-center justify-center h-12 px-10 bg-primary text-primary-foreground font-bold text-sm rounded-full hover:bg-primary/90 transition-colors shadow-md">
-              Start Your Project
-            </Link>
+            <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }} className="inline-block">
+              <Link href="/contact" className="inline-flex items-center justify-center h-12 px-10 bg-primary text-primary-foreground font-bold text-sm rounded-full hover:bg-primary/90 transition-colors shadow-md">
+                Start Your Project
+              </Link>
+            </motion.div>
           </motion.div>
         </div>
       </section>

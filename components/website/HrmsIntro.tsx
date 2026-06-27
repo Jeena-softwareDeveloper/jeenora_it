@@ -3,22 +3,23 @@
 import React from 'react';
 import { Code2, Smartphone, Globe, ShieldCheck } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { EASE_OUT, hoverLift } from '@/lib/animations';
 
 export default function HrmsIntro() {
   return (
-    <section className="relative bg-primary text-primary-foreground pt-12 pb-24 md:pb-32 mt-16 md:mt-[16rem] px-4 z-10">
-      <div className="container mx-auto max-w-6xl">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
+    <section className="relative bg-primary text-primary-foreground pt-10 pb-10 sm:pt-12 sm:pb-12 md:pb-0 mt-24 sm:mt-32 md:mt-[16rem] px-4 sm:px-6 z-10 overflow-hidden">
+      <div className="container mx-auto max-w-6xl w-full min-w-0">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-16 items-center min-w-0">
           
           {/* Left Content */}
           <motion.div 
-            className="space-y-8 relative z-10"
+            className="space-y-6 sm:space-y-8 relative z-10 min-w-0 w-full"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.7 }}
           >
-            <h2 className="text-4xl md:text-[2.75rem] font-bold leading-[1.2]">
+            <h2 className="text-2xl sm:text-3xl md:text-[2.75rem] font-bold leading-[1.2]">
               Your Technology Partner
               <br />
               for Every Business Challenge.
@@ -28,21 +29,21 @@ export default function HrmsIntro() {
               We are not just a software company — we are your long-term digital transformation partner. From Microfinance (MFI) platforms and Restaurant POS systems to Custom ERP, B2B portals, and cross-platform mobile apps, we engineer solutions that eliminate inefficiency, reduce costs, and power sustainable growth. Every line of code we write is built to solve a real business problem.
             </p>
 
-            <div className="flex flex-wrap items-center gap-4 pt-4">
-              <div className="bg-white rounded-lg px-6 py-3 flex items-center justify-center min-w-[160px] shadow-sm border-l-4 border-primary">
-                <span className="text-slate-800 font-extrabold text-lg tracking-tight uppercase">
+            <div className="grid grid-cols-3 gap-2 sm:gap-3 pt-2 pb-2 md:pb-0 w-full">
+              <div className="bg-white rounded-lg px-2 sm:px-5 py-2.5 sm:py-3 flex items-center justify-center shadow-sm border-l-4 border-primary min-w-0">
+                <span className="text-slate-800 font-extrabold text-[10px] sm:text-sm md:text-lg tracking-tight uppercase text-center leading-tight">
                   Enterprise
                 </span>
               </div>
               
-              <div className="bg-white rounded-lg px-6 py-3 flex items-center justify-center min-w-[160px] shadow-sm border-l-4 border-[#ff6b00]">
-                <span className="text-slate-800 font-extrabold text-lg tracking-tight uppercase">
+              <div className="bg-white rounded-lg px-2 sm:px-5 py-2.5 sm:py-3 flex items-center justify-center shadow-sm border-l-4 border-[#ff6b00] min-w-0">
+                <span className="text-slate-800 font-extrabold text-[10px] sm:text-sm md:text-lg tracking-tight uppercase text-center leading-tight">
                   Scalable
                 </span>
               </div>
 
-              <div className="bg-white rounded-lg px-6 py-3 flex items-center justify-center min-w-[160px] shadow-sm border-l-4 border-[#22c55e]">
-                <span className="text-slate-800 font-extrabold text-lg tracking-tight uppercase">
+              <div className="bg-white rounded-lg px-2 sm:px-5 py-2.5 sm:py-3 flex items-center justify-center shadow-sm border-l-4 border-[#22c55e] min-w-0">
+                <span className="text-slate-800 font-extrabold text-[10px] sm:text-sm md:text-lg tracking-tight uppercase text-center leading-tight">
                   Secure
                 </span>
               </div>
@@ -51,14 +52,14 @@ export default function HrmsIntro() {
 
           {/* Right Content - Company Highlights */}
           <motion.div 
-            className="relative w-full aspect-[4/3] bg-[#0a2244] rounded-2xl overflow-hidden shadow-2xl flex flex-col justify-center items-start p-8 text-white font-sans border border-white/10"
-            initial={{ opacity: 0, scale: 0.9, x: 20 }}
-            whileInView={{ opacity: 1, scale: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.7, delay: 0.2 }}
+            className="relative w-full min-w-0 bg-[#0a2244] rounded-2xl overflow-hidden shadow-2xl flex flex-col justify-center items-start p-5 sm:p-8 text-white font-sans border border-white/10"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.7, delay: 0.2, ease: EASE_OUT }}
           >
             <div className="w-full space-y-5">
-              <h3 className="font-bold text-xl text-white mb-6 border-b border-white/10 pb-4">Why Businesses Choose Jeenora</h3>
+              <h3 className="font-bold text-lg sm:text-xl text-white mb-4 sm:mb-6 border-b border-white/10 pb-4">Why Businesses Choose Jeenora</h3>
               {[
                 { icon: Code2, title: "Full-Stack Development", desc: "Web, mobile, API & cloud under one roof" },
                 { icon: Smartphone, title: "Android · iOS · Cross-Platform", desc: "Native performance, single codebase" },
@@ -79,18 +80,17 @@ export default function HrmsIntro() {
           </motion.div>
 
         </div>
-      </div>
 
-      {/* 3 Floating Cards */}
-      <div className="w-full z-20 px-4 md:absolute md:left-0 md:translate-y-1/2 md:bottom-0 relative mt-12 pb-8 md:mt-0 md:pb-0">
-        <div className="container mx-auto max-w-6xl">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        {/* 3 feature cards — normal flow so they never overlap Enterprise/Scalable/Secure badges */}
+        <div className="w-full min-w-0 z-20 relative mt-8 sm:mt-12 md:mt-16 lg:mt-20 md:-mb-28 lg:-mb-32">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             <motion.div 
-              className="bg-white rounded-[2rem] p-8 shadow-xl shadow-black/5 border border-gray-100 flex flex-col items-start text-left relative overflow-hidden"
+              className="bg-white rounded-[1.75rem] sm:rounded-[2rem] p-6 sm:p-8 shadow-xl shadow-black/5 border border-gray-100 flex flex-col items-start text-left relative overflow-hidden"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.3, ease: EASE_OUT }}
+              whileHover={hoverLift}
             >
               <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-bl-[100px] -z-10" />
               <div className="w-full flex justify-between items-start mb-6">
@@ -110,11 +110,12 @@ export default function HrmsIntro() {
             </motion.div>
             
             <motion.div 
-              className="bg-white rounded-[2rem] p-8 shadow-xl shadow-black/5 border border-gray-100 flex flex-col items-start text-left relative overflow-hidden"
+              className="bg-white rounded-[1.75rem] sm:rounded-[2rem] p-6 sm:p-8 shadow-xl shadow-black/5 border border-gray-100 flex flex-col items-start text-left relative overflow-hidden"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              transition={{ duration: 0.6, delay: 0.4, ease: EASE_OUT }}
+              whileHover={hoverLift}
             >
               <div className="absolute top-0 right-0 w-24 h-24 bg-[#ff6b00]/5 rounded-bl-[100px] -z-10" />
               <div className="w-full flex justify-between items-start mb-6">
@@ -137,11 +138,12 @@ export default function HrmsIntro() {
             </motion.div>
 
             <motion.div 
-              className="bg-white rounded-[2rem] p-8 shadow-xl shadow-black/5 border border-gray-100 flex flex-col items-start text-left relative overflow-hidden"
+              className="bg-white rounded-[1.75rem] sm:rounded-[2rem] p-6 sm:p-8 shadow-xl shadow-black/5 border border-gray-100 flex flex-col items-start text-left relative overflow-hidden"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: 0.5 }}
+              transition={{ duration: 0.6, delay: 0.5, ease: EASE_OUT }}
+              whileHover={hoverLift}
             >
               <div className="absolute top-0 right-0 w-24 h-24 bg-[#22c55e]/5 rounded-bl-[100px] -z-10" />
               <div className="w-full flex justify-between items-start mb-6">

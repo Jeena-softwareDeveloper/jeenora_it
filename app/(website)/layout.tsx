@@ -14,7 +14,7 @@ export default function WebsiteLayout({
         <TopBanner />
         <Navbar />
       </div>
-      <main className="flex-1 w-full pt-16 sm:pt-24">
+      <main className="flex-1 w-full min-w-0 overflow-x-hidden pt-16 sm:pt-24">
         {children}
       </main>
       <Footer />

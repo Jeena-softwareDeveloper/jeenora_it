@@ -48,12 +48,12 @@ export default function Footer() {
               Quick Links
             </h4>
             <ul className="flex flex-col space-y-4 text-white/80 text-sm">
-              <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
-              <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
-              <li><Link href="#services" className="hover:text-white transition-colors">Services</Link></li>
-              <li><Link href="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Terms of Service</Link></li>
+              <li><Link href="/" className="inline-block hover:text-white hover:translate-x-1 transition-all duration-200">Home</Link></li>
+              <li><Link href="/about" className="inline-block hover:text-white hover:translate-x-1 transition-all duration-200">About Us</Link></li>
+              <li><Link href="#services" className="inline-block hover:text-white hover:translate-x-1 transition-all duration-200">Services</Link></li>
+              <li><Link href="/contact" className="inline-block hover:text-white hover:translate-x-1 transition-all duration-200">Contact Us</Link></li>
+              <li><Link href="#" className="inline-block hover:text-white hover:translate-x-1 transition-all duration-200">Privacy Policy</Link></li>
+              <li><Link href="#" className="inline-block hover:text-white hover:translate-x-1 transition-all duration-200">Terms of Service</Link></li>
             </ul>
           </motion.div>
 
@@ -69,12 +69,12 @@ export default function Footer() {
               Our Services
             </h4>
             <ul className="flex flex-col space-y-4 text-white/80 text-sm">
-              <li><Link href="#services" className="hover:text-white transition-colors">MFI Software</Link></li>
-              <li><Link href="#services" className="hover:text-white transition-colors">Restaurant POS</Link></li>
-              <li><Link href="#services" className="hover:text-white transition-colors">ERP & CRM Development</Link></li>
-              <li><Link href="#services" className="hover:text-white transition-colors">Mobile App Development</Link></li>
-              <li><Link href="#services" className="hover:text-white transition-colors">E-Commerce Solutions</Link></li>
-              <li><Link href="#services" className="hover:text-white transition-colors">Cloud Deployment</Link></li>
+              <li><Link href="#services" className="inline-block hover:text-white hover:translate-x-1 transition-all duration-200">MFI Software</Link></li>
+              <li><Link href="#services" className="inline-block hover:text-white hover:translate-x-1 transition-all duration-200">Restaurant POS</Link></li>
+              <li><Link href="#services" className="inline-block hover:text-white hover:translate-x-1 transition-all duration-200">ERP & CRM Development</Link></li>
+              <li><Link href="#services" className="inline-block hover:text-white hover:translate-x-1 transition-all duration-200">Mobile App Development</Link></li>
+              <li><Link href="#services" className="inline-block hover:text-white hover:translate-x-1 transition-all duration-200">E-Commerce Solutions</Link></li>
+              <li><Link href="#services" className="inline-block hover:text-white hover:translate-x-1 transition-all duration-200">Cloud Deployment</Link></li>
             </ul>
           </motion.div>
 
@@ -151,7 +151,7 @@ export default function Footer() {
 
         {/* Bottom Footer Section */}
         <motion.div 
-          className="flex flex-col md:flex-row items-center justify-between gap-4 pt-2"
+          className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-4 pt-2"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -159,7 +159,7 @@ export default function Footer() {
         >
           
           {/* Social Icons */}
-          <div className="flex items-center space-x-6 text-white">
+          <div className="flex items-center space-x-6 text-white order-2 md:order-1">
             <Link href="#" className="hover:text-yellow-400 transition-colors">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
             </Link>
@@ -178,14 +178,15 @@ export default function Footer() {
           </div>
 
           {/* Copyright text */}
-          <div className="text-white/80 text-sm text-center md:text-right flex-1">
+          <div className="text-white/80 text-xs sm:text-sm text-center md:text-right flex-1 order-3 md:order-2">
             Copyright © 2025 Jeenora IT Solutions. All rights reserved. Designed & Developed by <span className="text-primary font-semibold bg-white/10 px-1 rounded">Jeenora</span>
           </div>
 
           {/* Scroll to Top Button */}
           <button 
             onClick={scrollToTop}
-            className="bg-[#d97706] hover:bg-[#b45309] transition-colors text-white p-2 rounded-md ml-4 hover:-translate-y-1 transform duration-300"
+            aria-label="Scroll to top"
+            className="bg-[#d97706] hover:bg-[#b45309] transition-all text-white p-2 rounded-md md:ml-4 hover:-translate-y-1 duration-300 order-1 md:order-3"
           >
             <ChevronUp size={20} />
           </button>

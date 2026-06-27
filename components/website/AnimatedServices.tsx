@@ -6,6 +6,7 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { EASE_OUT } from "@/lib/animations";
 
 const allServices = [
   {
@@ -128,11 +129,12 @@ export default function AnimatedServices() {
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.5, delay }}
-      className="bg-white rounded-xl p-5 shadow-sm border border-gray-100 flex flex-col justify-between hover:shadow-md transition-shadow h-full min-h-[160px] relative group"
+      transition={{ duration: 0.5, delay, ease: EASE_OUT }}
+      whileHover={{ y: -6, transition: { type: "spring", stiffness: 300, damping: 20 } }}
+      className="bg-white rounded-xl p-5 shadow-sm border border-gray-100 flex flex-col justify-between hover:shadow-lg hover:border-primary/20 transition-[box-shadow,border-color] duration-300 h-full min-h-[150px] sm:min-h-[160px] relative group"
     >
       <div className="flex gap-4 items-start">
-        <div className={`w-11 h-11 shrink-0 ${bg} rounded-lg flex items-center justify-center`}>
+        <div className={`w-11 h-11 shrink-0 ${bg} rounded-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-3`}>
           <Icon className={`w-5 h-5 ${color}`} />
         </div>
         <div className="flex-1">
@@ -142,13 +144,13 @@ export default function AnimatedServices() {
         </div>
       </div>
       <div className="absolute bottom-4 right-4 w-6 h-6 bg-gray-100 rounded flex items-center justify-center group-hover:bg-primary transition-colors cursor-pointer">
-        <ChevronRight className="w-4 h-4 text-gray-700 group-hover:text-primary-foreground transition-colors" />
+        <ChevronRight className="w-4 h-4 text-gray-700 group-hover:text-primary-foreground transition-all duration-300 group-hover:translate-x-0.5" />
       </div>
     </motion.div>
   );
 
   return (
-    <section id="services" className="relative pt-20 md:pt-28 pb-12 overflow-hidden bg-[#f8f9fa]">
+    <section id="services" className="relative pt-8 sm:pt-12 md:pt-36 lg:pt-40 pb-12 overflow-hidden bg-[#f8f9fa]">
       <div className="container mx-auto px-4 max-w-6xl">
         <motion.div 
           className="text-center mb-8"
@@ -179,20 +181,23 @@ export default function AnimatedServices() {
 
         {/* CTA Banner */}
         <motion.div
-          className="bg-primary rounded-2xl p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6"
+          className="bg-primary rounded-2xl p-7 sm:p-8 md:p-10 flex flex-col md:flex-row items-center text-center md:text-left justify-between gap-6 relative overflow-hidden"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.6, ease: EASE_OUT }}
         >
-          <div>
+          <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/5 rounded-full pointer-events-none" />
+          <div className="relative z-10">
             <h3 className="text-white font-bold text-xl md:text-2xl mb-2">Not sure which solution fits your business?</h3>
             <p className="text-white/70 text-sm">Book a free consultation and our experts will map out the right technology roadmap for you.</p>
           </div>
-          <div className="flex gap-3 shrink-0">
-            <Link href="/contact" className="h-11 px-7 bg-white text-primary font-bold text-sm rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors whitespace-nowrap">
-              Schedule Consultation
-            </Link>
+          <div className="flex gap-3 shrink-0 relative z-10 w-full md:w-auto">
+            <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }} className="w-full md:w-auto">
+              <Link href="/contact" className="h-11 px-7 bg-white text-primary font-bold text-sm rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors whitespace-nowrap w-full">
+                Schedule Consultation
+              </Link>
+            </motion.div>
           </div>
         </motion.div>
 

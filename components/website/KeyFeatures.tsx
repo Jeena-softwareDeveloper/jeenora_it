@@ -3,6 +3,7 @@
 import React from 'react';
 import { Shield, TrendingUp, Layers, Gauge, Headphones, RefreshCw, GitMerge, Globe } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { EASE_OUT } from '@/lib/animations';
 
 export default function KeyFeatures() {
   const features = [
@@ -70,19 +71,19 @@ export default function KeyFeatures() {
         </motion.div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {features.map((feature, idx) => (
             <motion.div 
               key={idx} 
-              className="bg-[#fcfdfd] rounded-2xl p-6 shadow-xl flex flex-col"
+              className="bg-[#fcfdfd] rounded-2xl p-6 shadow-xl flex flex-col group"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: (idx % 4) * 0.1 }}
-              whileHover={{ y: -8, transition: { duration: 0.2 } }}
+              transition={{ duration: 0.5, delay: (idx % 4) * 0.1, ease: EASE_OUT }}
+              whileHover={{ y: -8, transition: { type: "spring", stiffness: 300, damping: 20 } }}
             >
-              <div className="mb-5">
-                <feature.icon className="w-10 h-10 text-primary stroke-[1.5]" />
+              <div className="mb-5 inline-flex w-14 h-14 rounded-xl bg-primary/5 items-center justify-center transition-colors duration-300 group-hover:bg-primary/10">
+                <feature.icon className="w-8 h-8 text-primary stroke-[1.5] transition-transform duration-300 group-hover:scale-110" />
               </div>
               <h3 className="text-gray-900 font-bold text-lg leading-tight mb-3">
                 {feature.title}

@@ -37,19 +37,23 @@ export default function Navbar() {
         <div className="container mx-auto flex h-16 items-center justify-between px-4 max-w-7xl">
 
           {/* Logo */}
-          <div className="flex items-center">
-            <Link href="/" className="flex items-center group" onClick={close}>
-              <img src="/logo192.png" alt="Jeenora IT Solutions Logo" className="w-auto h-[70px] object-contain scale-[1.3] origin-left" />
+          <div className="flex items-center min-w-0 overflow-hidden">
+            <Link href="/" className="flex items-center group shrink-0" onClick={close}>
+              <img src="/logo192.png" alt="Jeenora IT Solutions Logo" className="w-auto h-[44px] sm:h-[52px] md:h-[60px] object-contain scale-110 sm:scale-[1.2] md:scale-[1.3] origin-left transition-transform duration-300 group-hover:scale-[1.15] sm:group-hover:scale-[1.28] md:group-hover:scale-[1.38]" />
             </Link>
-            <span className="hidden md:inline-block text-[11px] font-bold tracking-[0.2em] uppercase text-slate-700 ml-14 mt-1">
+            <span className="hidden lg:inline-block text-[11px] font-bold tracking-[0.2em] uppercase text-slate-700 ml-14 mt-1">
               Software Development Company
             </span>
           </div>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex gap-8 items-center ml-auto mr-8">
+          <nav className="hidden md:flex gap-6 lg:gap-8 items-center ml-auto mr-6 lg:mr-8">
             {navLinks.map(link => (
-              <Link key={link.href} href={link.href} className="text-sm font-medium transition-colors text-white/90 hover:text-white">
+              <Link
+                key={link.href}
+                href={link.href}
+                className="relative text-sm font-medium transition-colors text-white/90 hover:text-white after:absolute after:left-0 after:-bottom-1.5 after:h-0.5 after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
+              >
                 {link.label}
               </Link>
             ))}
